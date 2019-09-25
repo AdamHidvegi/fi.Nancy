@@ -1,0 +1,37 @@
+
+<div class="box-trans-dif">
+<br><p style="font-size: 30px;">You have spent: £<%=@money%></p>
+<%=@alert%><br><br>
+<button type="button"><a href="/transactions/new" >Create a new transaction</a></button>
+</div>
+<img src="/images/money.png" alt="wallet picture" style="position: absolute; max-width: 40%; left: 50%; top: 10%;">
+<br><br>
+<p style="font-size: 30px";>Your transactions:</p><br>
+
+<div class="box-btn">
+<p>Sort by:
+
+<button type="button"><a href="/transactions/index/filterbycategoryincrease">Category: A to Z</a></button>
+<button type="button"><a href="/transactions/index/filterbycategorydecrease">Category: Z to A</a></button>
+<button type="button"><a href="/transactions/index/filterbypriceincrease">Price: Low to High</a></button>
+<button type="button"><a href="/transactions/index/filterbypricedecrease">Price: High to Low</a></button>
+<button type="button"><a href="/transactions/index/filterbydateincrease">Date: Old to New</a></button>
+<button type="button"><a href="/transactions/index/filterbydatedecrease">Date: New to Old</a></button>
+<button type="button"><a href="/transactions/index/filterbymerchantincrease">Merchant: A to Z</a></button>
+<button type="button"><a href="/transactions/index/filterbymerchantdecrease">Merchant: Z to A</a></button>
+</p></div><br>
+  <div class="flex-container">
+    <% sorted_transactions = @transactions.sort_by {|a| a.today_date} %>
+    <% for transaction in sorted_transactions %>
+    <div class="flex-item">
+      <p>Date: <%=transaction.today_date%></p>
+      <p>Price: <%=transaction.price%></p>
+      <p>Merchant: <%=transaction.merchant.name%></p>
+      <p>Category: <%=transaction.category.name%></p>
+      <button type="button" title="You can modify your transaction here." style="font-size: 18px; text-decoration: none; margin:2px;"><a href="/transactions/<%= transaction.id %>/edit">Edit</a></button><br>
+      <form method="post" action="/transactions/<%= transaction.id %>/delete">
+        <input type="submit" name="delete" id="delete-btn" value="Delete" title="Be careful, it's hard to get this transaction back if you delete it!"style="font-size: 18px; text-decoration: none; padding: 7px; margin:5px;">
+      </form>
+    </div>
+    <% end %>
+  </div>

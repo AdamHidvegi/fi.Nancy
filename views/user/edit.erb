@@ -1,0 +1,20 @@
+<img src="/images/user2.png" alt="wallet picture" style="position: fixed; max-width: 55%; left: 43%; top: 15%;">
+<div class="box-edit-user">
+<h1 style="font-size: 44px;">Your new profile:</h1>
+<form method="post" action="/user/<%= @user.id %>/update">
+  <label for="first-name"> Your first name:</label>
+  <input id="first-name" type="text" pattern="[A-Za-z]{3,10}" placeholder="e.g. John" minlength= "3" maxlength="10" name="first_name" style="text-transform:capitalize; height: 25px; font-size: 20px;" required/><br>
+
+  <label for="last-name"> Your last name:</label>
+  <input id="last-name" type="text" pattern="[A-Za-z]{3,10}" placeholder="e.g. Doe" minlength= "3" maxlength="12" name="last_name" style="text-transform:capitalize; font-size: 20px;" required/><br>
+
+  <label for="email"> Your e-mail address:</label>
+  <input id="email" type="email" name="email" minlength="6" placeholder="e.g. sample@gmail.com" style="font-size: 20px;" required><br>
+
+  <label for="wallet">How much money do you have?</label>
+  <input id="wallet" type="number" placeholder="e.g. 3.5" minlength="1" name="wallet" min="0" step="0.01" style="height: 25px; font-size: 20px;" required><br>
+
+  <input type="submit" value="I'm ready!" title="Are you sure? Then go for it!" style="font-size: 18px; text-decoration: none; margin:2px; padding: 7px;"/>
+</form>
+<button type="button" style="font-size: 18px; text-decoration: none; margin:2px;" title="You can go back to your profile, if you have changed your mind."><a href="/user">Cancel</a></button>
+</div>

@@ -1,0 +1,13 @@
+<img src="/images/user1.png" alt="wallet picture" style="position: fixed; max-width: 55%; left: 43%; top: 15%;">
+<div class="box-user">
+  <div class="flex-container-user">
+  <h1 style="font-size: 44px;">Your profile:</h1>
+  <% for user in @users %>
+  <p style="font-size: 24px;">First name: <%=user.first_name.capitalize()%></p>
+  <p style="font-size: 24px;">Last name: <%=user.last_name.capitalize()%></p>
+  <p style="font-size: 24px;">E-mail address: <%=user.email%></p>
+  <p style="font-size: 24px;">Wallet: £<%=user.wallet%></p>
+  <button type="button" title="You can modify your profile here." style="font-size: 18px; text-decoration: none; padding: 7px;"><a href="/user/<%= user.id %>/edit">Edit</a></button>
+  <% end %>
+</div>
+</div>

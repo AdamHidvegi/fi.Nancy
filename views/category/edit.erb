@@ -1,0 +1,13 @@
+<div class="new-ct-text">
+  <form method="post" action="/settings/category/<%= @category.id %>/update"><br>
+
+    <p>The previous name of the category: <%= @category.name %></p>
+    <label for="name"> The new name of your category: </label>
+    <input id="name" type="text" placeholder="e.g. Nightlife" minlength= "3" maxlength="15" name="name" style="height: 25px; width: 120px; font-size: 20px;" required/><br><br>
+
+    <input type="submit" value="I'm ready!" title="Are you sure? Then go for it!" style="font-size: 18px; text-decoration: none; margin:2px; padding: 7px;"/>
+
+  </form><br>
+  <button type="button" style="font-size: 18px; text-decoration: none; margin:2px;" title="You can go back to your categories, if you have changed your mind."><a href="/settings/category/index">Cancel</a></button>
+</div>
+<img src="/images/suits.png" alt="wallet picture" style="position: fixed; max-width: 60%; left: 35%; top: 15%;">

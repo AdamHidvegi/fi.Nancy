@@ -1,0 +1,10 @@
+<div class="update-tr-text">
+<p>You successfully updated your transaction:</p><br>
+<p>New user: <%=@transaction.user.first_name%></p>
+<p>New date: <%=@transaction.today_date%></p>
+<p>New price: <%=@transaction.price%></p>
+<p>New merchant: <%=@transaction.merchant.name%></p>
+<p>New category: <%=@transaction.category.name%></p>
+<button type="button" title="You can modify your transaction here." style="font-size: 18px; text-decoration: none; margin:2px;"><a href="/transactions/index">Back to my transactions</a></button>
+</div>
+<img src="/images/success1.png" alt="wallet picture" style="position: fixed; max-width: 60%; left: 35%; top: 15%;">

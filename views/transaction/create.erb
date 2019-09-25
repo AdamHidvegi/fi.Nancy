@@ -1,0 +1,8 @@
+<div class="create-tr-text">
+<p>You successfully created this transaction:</p><br>
+<p>Price: <%=@transaction.price%></p>
+<p>Merchant: <%=@transaction.merchant.name%></p>
+<p>Category: <%=@transaction.category.name%></p>
+<button type="button" title="You can modify your transaction here." style="font-size: 18px; text-decoration: none; margin:2px;"><a href="/transactions/index">Back to my transactions</a></button>
+</div>
+<img src="/images/success2.png" alt="wallet picture" style="position: fixed; max-width: 60%; left: 35%; top: 15%;">

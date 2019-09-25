@@ -1,0 +1,35 @@
+<div class="new-tr-text">
+  <form method="post" action="/transactions/index"><br>
+
+    <label for="user"> Who are you? </label>
+    <select id="user" type="text" name="user_id" style="font-size: 20px;">
+      <% for user in @users %>
+      <option value="<%=user.id%>"> <%=user.first_name()%> </option>
+      <% end %>
+    </select><br>
+
+    <label for="today_date"> What is the date today? </label>
+    <input id="today_date" type="date" min="2000-01-01" max="2020-12-31" name="today_date" style="font-size: 20px;" required/><br>
+
+    <label for="price"> How much money did you spend? £ </label>
+    <input id="price" type="number" placeholder="e.g. 3.5" minlength= "3" maxlength="12" name="price" min="0" step="0.01" style="height: 25px; width: 70px; font-size: 20px;" required/><br>
+
+    <label for="merchant"> Where did you buy this item?  At</label>
+    <select id="merchant" type="text" name="merchant_id" style="font-size: 20px; width: auto;">
+      <% for merchant in @merchants %>
+      <option value="<%=merchant.id%>"> <%=merchant.name%> </option>
+      <% end %>
+    </select><br>
+
+    <label for="category"> Pick a category for your purchase: </label>
+    <select id="category" type="text" name="category_id" style="font-size: 20px;">
+      <% for category in @categories %>
+      <option value="<%=category.id%>"> <%=category.name%> </option>
+      <% end %>
+    </select><br>
+
+    <input type="submit" value="I'm ready!" title="Are you sure? Then go for it!" style="font-size: 18px; text-decoration: none; margin:2px; padding: 7px;"/>
+  </form>
+  <button type="button" style="font-size: 18px; text-decoration: none; margin:2px;" title="You can go back to your transactions, if you have changed your mind."><a href="/transactions/index">Cancel</a></button>
+</div>
+<img src="/images/wallet.png" alt="wallet picture" style="position: fixed; max-width: 60%; left: 35%; top: 15%;">

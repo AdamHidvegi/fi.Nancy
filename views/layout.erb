@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title> fi.Nancy </title>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/pound.png">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="nav-bar">
+    <nav>
+      <ul>
+        <img src="/images/logo1.png" alt="logo" style="height: 35px; width: auto; align-content:center;">
+        <li><a href="/">Home</a></li>
+        <li><a href="/user">My Profile</a></li>
+        <li><a href="/transactions/index">Transactions</a></li>
+        <li><a href="/settings">Settings</a></li>
+      </ul>
+    </nav>
+  </div>
+  <%= yield %>
+  <div class="footer">
+    <footer>
+      <ul style="list-style-type: none;">
+        <li><a href="/">Home</a></li>
+        <li><a href="/user">My Profile</a></li>
+        <li><a href="/transactions/index">Transactions</a></li>
+        <li><a href="/settings">Settings</a></li>
+        <li><a href="https://www.facebook.com" class="fa fa-facebook"></a></li>
+        <li><a href="https://www.twitter.com" class="fa fa-twitter"></a></li>
+        <li><a href="https://www.google.com" class="fa fa-google"></a></li>
+        <li><a href="https://www.linkedin.com" class="fa fa-linkedin"></a></li>
+        <li><a href="https://www.youtube.com/watch?v=ATDYLTnGJV0&fbclid=IwAR3Umiu_rXUHm6cizTdDbRWurMglrjRYAk1QmMpIJ0I12oYhOfSYGKLNdeI" class="fa fa-youtube"></a></li>
+        <li><a href="https://www.instagram.com" class="fa fa-instagram"></a></li>
+      </ul>
+    </footer>
+  </div>
+</body>
+</html>

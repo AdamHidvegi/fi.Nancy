@@ -1,0 +1,19 @@
+<div class="box-trans">
+<br><p style="font-size: 30px;">You have <%= @all_categories %> categories.</p>
+<p style="font-size: 30px;">Would you like to create a new one?</p>
+<button type="button" style="font-size: 18px; text-decoration: none; margin:2px;"><a href="new">Create a new category</a></button>
+</div><br><br>
+
+<br><p style="font-size: 30px;">Your categories:</p>
+
+<div class="flex-container">
+  <% for category in @categories %>
+  <div class="flex-item">
+  <p>Category name: <%=category.name%></p>
+    <button type="button" title="You can modify your category here." style="font-size: 18px; text-decoration: none; margin:2px;"><a href="/settings/category/<%= category.id %>/edit">Edit</a></button>
+    <form method="post" action="/settings/category/<%= category.id %>/delete">
+      <input type="submit" name="delete" id="delete-btn" title="Be careful, if you delete this category, your transaction what use it will be deleted as well!" value="Delete" style="font-size: 18px; text-decoration: none; padding: 7px; margin:5px;">
+    </form>
+  </div>
+  <% end %>
+</div>
