@@ -150,7 +150,7 @@ merchant5.save()
 
 
 merchant6 = Merchant.new({
-  "name" => "Holland and Barrett"
+  "name" => "MnS"
   })
 merchant6.save()
 
